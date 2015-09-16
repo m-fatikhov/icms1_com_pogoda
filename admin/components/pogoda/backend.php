@@ -28,12 +28,12 @@ $cfg = $inCore->loadComponentConfig('pogoda');
 $props = $model->getPagesProps();
 
 $days = array(
-    1 => ' текущая',
-    3 => '3 дня',
-    5 => '5 дней',
-    7 => '7 дней',
+    1  => ' текущая',
+    3  => '3 дня',
+    5  => '5 дней',
+    7  => '7 дней',
     10 => '10 дней',
-    14 =>'2 недели'
+    14 => '2 недели'
 );
 
 if ($opt == 'saveconfig') {
@@ -53,8 +53,8 @@ if ($opt == 'saveconfig') {
         $props[$k]['title'] = cmsCore::request($k.'_title', 'str', '');
         $props[$k]['meta_keys'] = cmsCore::request($k.'_meta_keys', 'str', '');
         $props[$k]['meta_desc'] = cmsCore::request($k.'_meta_desc', 'str', '');
-        $props[$k]['before_text'] = cmsCore::request($k.'_before_text', 'str', '');
-        $props[$k]['after_text'] = cmsCore::request($k.'_after_text', 'str', '');
+        $props[$k]['before_text'] = cmsCore::request($k.'_before_text', 'html', '');
+        $props[$k]['after_text'] = cmsCore::request($k.'_after_text', 'html', '');
     }
 
     cmsCore::addSessionMessage("Настройки успешно сохранены", 'success');

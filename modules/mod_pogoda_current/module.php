@@ -37,8 +37,6 @@ function mod_pogoda_current($mod, $cfg){
     $current["weather"]["value"] = $xml->weather["value"];
     $current["weather"]["icon"] = $xml->weather["icon"];
 
-    $current["lastupdate"] = date('d.m.y H:i', strtotime($xml->lastupdate["value"]) +($cfg["utc_diff"]*3600));
-
     cmsPage::initTemplate('modules', $cfg['tpl'])->
     assign('current', $current)->
     display($cfg['tpl']);
