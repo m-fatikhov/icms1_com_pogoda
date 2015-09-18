@@ -63,6 +63,6 @@ DELETE FROM `#__cron_jobs` WHERE `component` = 'pogoda';
 -- Добавление записей задач CRON
 --
 INSERT INTO `#__cron_jobs` (`job_name`, `job_interval`, `component`, `model_method`, `custom_file`, `is_enabled`, `is_new`, `comment`, `class_name`, `class_method`)
-VALUES ('Импорт прогноза погоды на 5 дней', 12, 'pogoda', 'parse5daysForecastWeather', '', 1, 0, 'Импортирует прогноз погоды на 5 дней с сайта openweathermap.org', '', ''),
-('Импорт прогноза погоды на 16 дней', 12, 'pogoda', 'parse16daysForecastWeather', '', 1, 0, 'Импортирует прогноз погоды на 16 дней с сайта openweathermap.org', '', ''),
-('Импорт текущей погоды', 1, 'pogoda', 'parseCurrentWeather', '', 1, 0, 'Импортирует текущую погоду с сайта openweathermap.org', '', '');
+VALUES ('parse5daysForecastWeather', 12, 'pogoda', 'parse5daysForecastWeather', '', 1, 0, 'Импортирует прогноз погоды на 5 дней с сайта openweathermap.org', '', ''),
+('parse16daysForecastWeather', 12, 'pogoda', 'parse16daysForecastWeather', '', 1, 0, 'Импортирует прогноз погоды на 16 дней с сайта openweathermap.org', '', ''),
+('parseCurrentWeather', 1, 'pogoda', 'parseCurrentWeather', '', 1, 0, 'Импортирует текущую погоду с сайта openweathermap.org', '', '');
